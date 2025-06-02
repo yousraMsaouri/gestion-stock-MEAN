@@ -1,0 +1,25 @@
+<div class="edit-product-form">
+  <h2>Modifier le produit</h2>
+
+  <form (ngSubmit)="updateProduct()">
+    <label>Nom :</label>
+    <input type="text" [(ngModel)]="product.name" name="name" required />
+
+    <label>Description :</label>
+    <textarea [(ngModel)]="product.description" name="description"></textarea>
+
+    <label>Prix :</label>
+    <input type="number" [(ngModel)]="product.price" name="price" required />
+
+    <label>Stock :</label>
+    <input type="number" [(ngModel)]="product.stock" name="stock" required />
+
+    <label>Catégorie :</label>
+    <input type="text" [(ngModel)]="product.category" name="category" required />
+
+    <button type="submit">Mettre à jour</button>
+  </form>
+
+  <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>

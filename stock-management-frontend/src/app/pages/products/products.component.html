@@ -1,0 +1,33 @@
+<div class="product-list">
+  <h2>Liste des produits</h2>
+
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Prix</th>
+      <th>Stock</th>
+      <th>Catégorie</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.price }} €</td>
+      <td>{{ product.stock }}</td>
+      <td>{{ product.category }}</td>
+      <td>
+        <button (click)="editProduct(product._id)">Modifier</button>
+        <button (click)="deleteProduct(product._id)">Supprimer</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <button class="add-btn" [routerLink]="['/add-product']">+ Ajouter un produit</button>
+</div>

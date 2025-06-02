@@ -1,0 +1,25 @@
+<div class="add-product-form">
+  <h2>Ajouter un produit</h2>
+
+  <form (ngSubmit)="addProduct()">
+    <label>Nom :</label>
+    <input type="text" [(ngModel)]="product.name" name="name" required />
+
+    <label>Description :</label>
+    <textarea [(ngModel)]="product.description" name="description"></textarea>
+
+    <label>Prix :</label>
+    <input type="number" [(ngModel)]="product.price" name="price" required />
+
+    <label>Stock :</label>
+    <input type="number" [(ngModel)]="product.stock" name="stock" required />
+
+    <label>Catégorie :</label>
+    <input type="text" [(ngModel)]="product.category" name="category" required />
+
+    <button type="submit">Ajouter</button>
+  </form>
+
+  <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>
